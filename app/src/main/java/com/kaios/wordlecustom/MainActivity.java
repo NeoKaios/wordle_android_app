@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        WordleHandler.getInstance().startGame(findViewById(R.id.wordgrid));
+        getString(R.string.a);
+        WordleHandler.getInstance().startGame(getApplicationContext() ,findViewById(R.id.wordgrid), findViewById(R.id.keyboard));
 
 
 

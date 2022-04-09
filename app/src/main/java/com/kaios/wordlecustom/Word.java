@@ -18,13 +18,14 @@ public class Word {
         nbLettersWritten = 0;
     }
 
-    private void writeLetter(char letter){
+    public void writeLetter(String letter){
         if(nbLettersWritten>=5){
             return;
         }
         letters.get(nbLettersWritten).writeLetter(letter);
         nbLettersWritten++;
     }
+
     public String getWord(){
         if(nbLettersWritten!=5){
             return "ISSUES";
@@ -36,5 +37,14 @@ public class Word {
             }
             return res.toString();
         }
+    }
+
+    public void delete() {
+        if(nbLettersWritten<=0){
+            return;
+        }
+        nbLettersWritten--;
+        letters.get(nbLettersWritten).eraseLetter();
+
     }
 }

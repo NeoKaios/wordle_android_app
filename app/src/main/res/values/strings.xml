@@ -11,12 +11,14 @@
     <string name="word_width">250dp</string>
     <string name="Enter">Enter</string>
     <string name="EnterText">_|</string>
+    <string name="Backspace">Backspace</string>
+    <string name="BackspaceText">==</string>
     <string name="a">A</string>
     <string name="b">B</string>
-    <string name="C">C</string>
+    <string name="c">C</string>
     <string name="d">D</string>
     <string name="e">E</string>
-    <string name="F">F</string>
+    <string name="f">F</string>
     <string name="g">G</string>
     <string name="h">H</string>
     <string name="i">I</string>
