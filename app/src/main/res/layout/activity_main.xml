@@ -1,0 +1,817 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/wordgrid"
+        android:layout_width="250dp"
+        android:layout_height="350dp"
+        app:layout_constraintBottom_toTopOf="@id/keyboard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/word1"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/word2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <FrameLayout
+                android:id="@+id/letter11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter12"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:contentDescription="@string/letter1"
+                    app:srcCompat="@android:drawable/screen_background_light"
+                    app:tint="@color/grey" />
+
+                <TextView
+                    android:id="@+id/text11"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:textSize="25sp"/>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/letter12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter13"
+                app:layout_constraintStart_toEndOf="@+id/letter11"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:contentDescription="@string/letter1"
+                    app:srcCompat="@android:drawable/screen_background_light"
+                    app:tint="@color/grey" />
+
+                <TextView
+                    android:id="@+id/text12"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:text="R"
+                    android:textSize="25sp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/letter13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter14"
+                app:layout_constraintStart_toEndOf="@+id/letter12"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:contentDescription="@string/letter1"
+                    app:srcCompat="@android:drawable/screen_background_light"
+                    app:tint="@color/grey" />
+
+                <TextView
+                    android:id="@+id/text13"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:text="R"
+                    android:textSize="25sp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/letter14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter15"
+                app:layout_constraintStart_toEndOf="@id/letter13"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:contentDescription="@string/letter1"
+                    app:srcCompat="@android:drawable/screen_background_light"
+                    app:tint="@color/grey" />
+
+                <TextView
+                    android:id="@+id/text14"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:text="R"
+                    android:textSize="25sp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/letter15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/letter14"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:contentDescription="@string/letter1"
+                    app:srcCompat="@android:drawable/screen_background_light"
+                    app:tint="@color/grey" />
+
+                <TextView
+                    android:id="@+id/text15"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:text="R"
+                    android:textSize="25sp" />
+
+            </FrameLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/word2"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/word3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/word1">
+
+            <ImageView
+                android:id="@+id/letter21"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/letter1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter22"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_light"
+                app:tint="@color/grey" />
+
+            <ImageView
+                android:id="@+id/letter22"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/letter2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter23"
+                app:layout_constraintStart_toEndOf="@id/letter21"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_light"
+                app:tint="@color/grey" />
+
+            <ImageView
+                android:id="@+id/letter23"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/letter3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter24"
+                app:layout_constraintStart_toEndOf="@id/letter22"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_light"
+                app:tint="@color/grey" />
+
+            <ImageView
+                android:id="@+id/letter24"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/letter4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter25"
+                app:layout_constraintStart_toEndOf="@id/letter23"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_light"
+                app:tint="@color/grey" />
+
+            <ImageView
+                android:id="@+id/letter25"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/letter5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/letter24"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_light"
+                app:tint="@color/grey" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/word4"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/word5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/word3">
+
+            <ImageView
+                android:id="@+id/letter41"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/letter1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter42"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_light"
+                app:tint="@color/grey" />
+
+            <ImageView
+                android:id="@+id/letter42"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/letter2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter43"
+                app:layout_constraintStart_toEndOf="@id/letter41"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_light"
+                app:tint="@color/grey" />
+
+            <ImageView
+                android:id="@+id/letter43"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/letter3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter44"
+                app:layout_constraintStart_toEndOf="@id/letter42"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_light"
+                app:tint="@color/grey" />
+
+            <ImageView
+                android:id="@+id/letter44"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/letter4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter45"
+                app:layout_constraintStart_toEndOf="@id/letter43"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_light"
+                app:tint="@color/grey" />
+
+            <ImageView
+                android:id="@+id/letter45"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/letter5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/letter44"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_light"
+                app:tint="@color/grey" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/word5"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/word6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/word4">
+
+            <ImageView
+                android:id="@+id/letter1"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/letter1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_light"
+                app:tint="@color/grey" />
+
+            <ImageView
+                android:id="@+id/letter2"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/letter2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter3"
+                app:layout_constraintStart_toEndOf="@+id/letter1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_light"
+                app:tint="@color/grey" />
+
+            <ImageView
+                android:id="@+id/letter3"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/letter3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter4"
+                app:layout_constraintStart_toEndOf="@+id/letter2"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_light"
+                app:tint="@color/grey" />
+
+            <ImageView
+                android:id="@+id/letter4"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/letter4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter5"
+                app:layout_constraintStart_toEndOf="@+id/letter3"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_light"
+                app:tint="@color/grey" />
+
+            <ImageView
+                android:id="@+id/letter5"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/letter5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/letter4"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_light"
+                app:tint="@color/grey" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/word6"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/word5">
+
+            <ImageView
+                android:id="@+id/letter61"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/letter1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter62"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_light"
+                app:tint="@color/grey" />
+
+            <ImageView
+                android:id="@+id/letter62"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/letter2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter63"
+                app:layout_constraintStart_toEndOf="@id/letter61"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_light"
+                app:tint="@color/grey" />
+
+            <ImageView
+                android:id="@+id/letter63"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/letter3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter64"
+                app:layout_constraintStart_toEndOf="@id/letter62"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_light"
+                app:tint="@color/grey" />
+
+            <ImageView
+                android:id="@+id/letter64"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/letter4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter65"
+                app:layout_constraintStart_toEndOf="@id/letter63"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_light"
+                app:tint="@color/grey" />
+
+            <ImageView
+                android:id="@+id/letter65"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/letter5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/letter64"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_light"
+                app:tint="@color/grey" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/word3"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/word4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/word2">
+
+            <ImageView
+                android:id="@+id/letter31"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/letter1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter32"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_light"
+                app:tint="@color/grey" />
+
+            <ImageView
+                android:id="@+id/letter32"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/letter2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter33"
+                app:layout_constraintStart_toEndOf="@id/letter31"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_light"
+                app:tint="@color/grey" />
+
+            <ImageView
+                android:id="@+id/letter33"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/letter3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter34"
+                app:layout_constraintStart_toEndOf="@id/letter32"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_light"
+                app:tint="@color/grey" />
+
+            <ImageView
+                android:id="@+id/letter34"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/letter4"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/letter35"
+                app:layout_constraintStart_toEndOf="@id/letter33"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_light"
+                app:tint="@color/grey" />
+
+            <ImageView
+                android:id="@+id/letter35"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:contentDescription="@string/letter5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/letter34"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/screen_background_light"
+                app:tint="@color/grey" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/keyboard"
+        android:layout_width="350dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/wordgrid">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/keyboard_row1"
+            app:layout_constraintBottom_toTopOf="@id/keyboard_row2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="350dp"
+            android:layout_height="50dp">
+
+            <FrameLayout
+                android:id="@+id/key11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/key12"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/A"
+                    android:layout_width="30dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="@string/a" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:elevation="10dp"
+                    android:layout_gravity="center"
+                    android:text="@string/a"
+                    android:textSize="25sp"
+                    android:textColor="@color/white"/>
+
+            </FrameLayout>
+            <FrameLayout
+                android:id="@+id/key12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/key13"
+                app:layout_constraintStart_toEndOf="@id/key11"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/Z"
+                    android:layout_width="30dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="@string/z" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:elevation="10dp"
+                    android:layout_gravity="center"
+                    android:text="@string/z"
+                    android:textSize="25sp"
+                    android:textColor="@color/white"/>
+
+            </FrameLayout>
+            <FrameLayout
+                android:id="@+id/key13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/key14"
+                app:layout_constraintStart_toEndOf="@id/key12"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/E"
+                    android:layout_width="30dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="@string/e" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:elevation="10dp"
+                    android:layout_gravity="center"
+                    android:text="@string/e"
+                    android:textSize="25sp"
+                    android:textColor="@color/white"/>
+
+            </FrameLayout>
+            <FrameLayout
+                android:id="@+id/key14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/key15"
+                app:layout_constraintStart_toEndOf="@id/key13"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/R"
+                    android:layout_width="30dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="@string/r" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:elevation="10dp"
+                    android:layout_gravity="center"
+                    android:text="@string/r"
+                    android:textSize="25sp"
+                    android:textColor="@color/white"/>
+
+            </FrameLayout>
+            <FrameLayout
+                android:id="@+id/key15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/key16"
+                app:layout_constraintStart_toEndOf="@id/key14"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/T"
+                    android:layout_width="30dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="@string/t" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:elevation="10dp"
+                    android:layout_gravity="center"
+                    android:text="@string/t"
+                    android:textSize="25sp"
+                    android:textColor="@color/white"/>
+
+            </FrameLayout>
+            <FrameLayout
+                android:id="@+id/key16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/key17"
+                app:layout_constraintStart_toEndOf="@id/key15"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/Y"
+                    android:layout_width="30dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="@string/y" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:elevation="10dp"
+                    android:layout_gravity="center"
+                    android:text="@string/y"
+                    android:textSize="25sp"
+                    android:textColor="@color/white"/>
+
+            </FrameLayout>
+            <FrameLayout
+                android:id="@+id/key17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/key18"
+                app:layout_constraintStart_toEndOf="@id/key16"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/U"
+                    android:layout_width="30dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="@string/u" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:elevation="10dp"
+                    android:layout_gravity="center"
+                    android:text="@string/u"
+                    android:textSize="25sp"
+                    android:textColor="@color/white"/>
+
+            </FrameLayout>
+            <FrameLayout
+                android:id="@+id/key18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/key19"
+                app:layout_constraintStart_toEndOf="@id/key17"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/I"
+                    android:layout_width="30dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="@string/i" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:elevation="10dp"
+                    android:layout_gravity="center"
+                    android:text="@string/i"
+                    android:textSize="25sp"
+                    android:textColor="@color/white"/>
+
+            </FrameLayout>
+            <FrameLayout
+                android:id="@+id/key19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/key10"
+                app:layout_constraintStart_toEndOf="@id/key18"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/O"
+                    android:layout_width="30dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="@string/o" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:elevation="10dp"
+                    android:layout_gravity="center"
+                    android:text="@string/o"
+                    android:textSize="25sp"
+                    android:textColor="@color/white"/>
+
+            </FrameLayout>
+            <FrameLayout
+                android:id="@+id/key10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/key19"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/P"
+                    android:layout_width="30dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="@string/p" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:elevation="10dp"
+                    android:layout_gravity="center"
+                    android:text="@string/p"
+                    android:textSize="25sp"
+                    android:textColor="@color/white"/>
+
+            </FrameLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/keyboard_row2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/keyboard_row1"
+            android:layout_width="350dp"
+            android:layout_height="50dp">
+
+            <FrameLayout
+                android:id="@+id/key20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <Button
+                    android:id="@+id/Enter"
+                    android:layout_width="30dp"
+                    android:layout_height="48dp"
+                    android:contentDescription="@string/Enter" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:elevation="10dp"
+                    android:text="@string/EnterText"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+            </FrameLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
