@@ -7,6 +7,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#FF606060</color>
     <color name="green">#ff66cc00</color>
+    <color name="red">#FFC00000</color>
     <color name="yellow">#FFF1C232</color>
     <color name="dark_grey">#FF303030</color>
     <color name="key_basic">#FF808080</color>

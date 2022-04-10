@@ -28,4 +28,8 @@ public class Letter {
     public void colorize(int color) {
         tv.setBackgroundColor(color);
     }
+
+    public void colorizeText(int color) {
+        tv.setTextColor(color);
+    }
 }

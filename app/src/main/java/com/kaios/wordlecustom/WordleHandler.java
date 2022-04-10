@@ -3,23 +3,25 @@ package com.kaios.wordlecustom;
 import android.content.Context;
 import android.view.View;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Hashtable;
-import java.util.Iterator;
 import java.util.Map;
-import java.util.Set;
 
 public class WordleHandler {
     private static WordleHandler INSTANCE = null;
     private final Keyboard keyboard;
     private Word currentWord;
-    private String[] answer;
+    private String answer;
     private Hashtable<Integer, String > converter;
     private Word[] words;
     private int wordCnt;
     private int green;
     private int grey;
     private int yellow;
+    private int red;
+    private int white;
 
     private WordleHandler() {
         keyboard = Keyboard.getInstance();
@@ -31,22 +33,22 @@ public class WordleHandler {
         }
         return(INSTANCE);
     }
+
     public void startGame(Context context, View wordGrid, View keyboardView){
         populateConverter(context);
         green = context.getResources().getColor(R.color.green);
         yellow = context.getResources().getColor(R.color.yellow);
         grey = context.getResources().getColor(R.color.grey);
-        //words = new Word[] { new Word(1, wordGrid), new Word(2, wordGrid), new Word(3, wordGrid), new Word(4, wordGrid), new Word(5, wordGrid), new Word(6, wordGrid)};
-        words = new Word[] { new Word(1, wordGrid), new Word(2, wordGrid)};
+        red = context.getResources().getColor(R.color.red);
+        white = context.getResources().getColor(R.color.white);
+        words = new Word[] { new Word(1, wordGrid), new Word(2, wordGrid), new Word(3, wordGrid), new Word(4, wordGrid), new Word(5, wordGrid), new Word(6, wordGrid)};
         wordCnt= 0;
         currentWord = words[wordCnt];
         keyboard.setup(context, keyboardView);
-        pickWord();
+        WordDictionary.getInstance().FillDictionary(context);
+        answer = WordDictionary.getInstance().pickWord(context);
     }
 
-    private void pickWord() {
-        answer = new String[] { "P", "O", "R", "T", "E"};
-    }
 
     private void populateConverter(Context context) {
         converter = new Hashtable<>();
@@ -83,6 +85,7 @@ public class WordleHandler {
     }
 
     public void backspacePressed() {
+        currentWord.flashRed(white, white);
         currentWord.delete();
     }
 
@@ -90,11 +93,21 @@ public class WordleHandler {
         if(!currentWord.isFull()){
             return;
         }
-        colorizeWord();
-        if(wordCnt>=1){
+        //todo check if real word, else shake
+        StringBuilder wordBuilder = new StringBuilder();
+        for (String letter : currentWord.getWord()){
+            wordBuilder.append(letter);
+        }
+        String word = wordBuilder.toString();
+        if(!WordDictionary.getInstance().isAWord(word)){
+            currentWord.flashRed(white, red);
             return;
         }
-        //todo check if real word, else shake
+        colorizeWord();
+
+        if(wordCnt>=6){
+            return;
+        }
         wordCnt++;
         currentWord = words[wordCnt];
     }
@@ -112,11 +125,11 @@ public class WordleHandler {
         String[] word = currentWord.getWord();
         HashSet<Integer> buttons = new HashSet<>();
 
-        String[] correct = new String[] { answer[0], answer[1], answer[2], answer[3], answer[4]};
+        String[] correct = new String[] { answer.substring(0,1), answer.substring(1,2), answer.substring(2,3), answer.substring(3,4), answer.substring(4,5)};
         int[] colorationIdList = new int[]{grey,grey,grey,grey,grey };
         //checking green
         for(int i =0; i<5; ++i){
-            if(word[i].equals(answer[i])){
+            if(word[i].equals(correct[i])){
                 colorationIdList[i] = green;
                 int letterId = getLetterId(word[i]);
                 keyboard.colorize(letterId, 2);
