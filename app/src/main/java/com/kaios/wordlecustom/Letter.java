@@ -24,4 +24,8 @@ public class Letter {
     public String getLetter(){
         return value;
     }
+
+    public void colorize(int color) {
+        tv.setBackgroundColor(color);
+    }
 }

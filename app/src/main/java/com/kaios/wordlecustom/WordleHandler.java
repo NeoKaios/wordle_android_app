@@ -3,15 +3,23 @@ package com.kaios.wordlecustom;
 import android.content.Context;
 import android.view.View;
 
+import java.util.HashSet;
 import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
 public class WordleHandler {
     private static WordleHandler INSTANCE = null;
     private final Keyboard keyboard;
     private Word currentWord;
+    private String[] answer;
     private Hashtable<Integer, String > converter;
     private Word[] words;
     private int wordCnt;
+    private int green;
+    private int grey;
+    private int yellow;
 
     private WordleHandler() {
         keyboard = Keyboard.getInstance();
@@ -25,11 +33,19 @@ public class WordleHandler {
     }
     public void startGame(Context context, View wordGrid, View keyboardView){
         populateConverter(context);
+        green = context.getResources().getColor(R.color.green);
+        yellow = context.getResources().getColor(R.color.yellow);
+        grey = context.getResources().getColor(R.color.grey);
         //words = new Word[] { new Word(1, wordGrid), new Word(2, wordGrid), new Word(3, wordGrid), new Word(4, wordGrid), new Word(5, wordGrid), new Word(6, wordGrid)};
         words = new Word[] { new Word(1, wordGrid), new Word(2, wordGrid)};
         wordCnt= 0;
         currentWord = words[wordCnt];
-        keyboard.setup(keyboardView);
+        keyboard.setup(context, keyboardView);
+        pickWord();
+    }
+
+    private void pickWord() {
+        answer = new String[] { "P", "O", "R", "T", "E"};
     }
 
     private void populateConverter(Context context) {
@@ -74,11 +90,75 @@ public class WordleHandler {
         if(!currentWord.isFull()){
             return;
         }
+        colorizeWord();
         if(wordCnt>=1){
             return;
         }
         //todo check if real word, else shake
         wordCnt++;
         currentWord = words[wordCnt];
+    }
+    
+    public int getLetterId(String letter){
+        for (Map.Entry<Integer, String> entry : converter.entrySet()) {
+            if (entry.getValue().equals(letter)) {
+                return entry.getKey();
+            }
+        }
+        return 0;
+    }
+
+    private void colorizeWord(){
+        String[] word = currentWord.getWord();
+        HashSet<Integer> buttons = new HashSet<>();
+
+        String[] correct = new String[] { answer[0], answer[1], answer[2], answer[3], answer[4]};
+        int[] colorationIdList = new int[]{grey,grey,grey,grey,grey };
+        //checking green
+        for(int i =0; i<5; ++i){
+            if(word[i].equals(answer[i])){
+                colorationIdList[i] = green;
+                int letterId = getLetterId(word[i]);
+                keyboard.colorize(letterId, 2);
+                buttons.add(letterId);
+                word[i] = "_";
+                correct[i] = "-";
+            }
+        }
+        //checking yellow
+        for (int i=0; i<5; i++){
+            if(word[i].equals("_")){
+                continue;
+            }
+            int j = 0;
+            while(j<5){
+                if(correct[j].equals(word[i])){
+                    colorationIdList[i] = yellow;
+                    int letterId = getLetterId(word[i]);
+                    if(!buttons.contains(letterId)){
+                        keyboard.colorize(letterId, 1);
+                        buttons.add(letterId);
+                    }
+                    word[i] = "_";
+                    correct[j] = "-";
+                    break;
+                }
+                j++;
+            }
+        }
+        //check grey
+        for(int i =0; i<5; ++i){
+            if(!word[i].equals("_")){
+                int letterId = getLetterId(word[i]);
+                if(!buttons.contains(letterId)){
+                    keyboard.colorize(letterId, 0);
+                    buttons.add(letterId);
+                }
+            }
+        }
+
+        currentWord.colorize(colorationIdList);
+
+
     }
 }

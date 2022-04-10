@@ -26,17 +26,13 @@ public class Word {
         nbLettersWritten++;
     }
 
-    public String getWord(){
-        if(nbLettersWritten!=5){
-            return "ISSUES";
+    public String[] getWord(){
+        String[] res = new String[5];
+        for(int i =0; i<5; ++i){
+            res[i] = letters.get(i).getLetter();
         }
-        else{
-            StringBuilder res = new StringBuilder();
-            for(int i =0; i<5; ++i){
-                res.append(letters.get(i).getLetter());
-            }
-            return res.toString();
-        }
+        return res;
+
     }
 
     public void delete() {
@@ -50,5 +46,11 @@ public class Word {
 
     public boolean isFull() {
         return nbLettersWritten >= 5;
+    }
+
+    public void colorize(int[] colorationIdList) {
+        for(int i=0; i<5; ++i){
+            letters.get(i).colorize(colorationIdList[i]);
+        }
     }
 }
