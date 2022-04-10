@@ -1,17 +1,15 @@
 package com.kaios.wordlecustom;
 
-import android.annotation.SuppressLint;
 import android.view.View;
 import android.widget.TextView;
 
 public class Letter {
 
-    private TextView tv;
+    private final TextView tv;
     private String value;
 
     public Letter(int id, View view ){
-        tv = (TextView)view.findViewById(id);
-        tv.setText(R.string.b);
+        tv = view.findViewById(id);
     }
 
     public void writeLetter(String letter){

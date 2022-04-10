@@ -1,12 +1,12 @@
 package com.kaios.wordlecustom;
 
 import android.view.View;
-
 import java.util.ArrayList;
 
 public class Word {
     private final ArrayList<Letter> letters;
-    private static int[] idlist = {R.id.text11, R.id.text12,R.id.text13, R.id.text14,R.id.text15 };
+    private static final int[] idlist = {R.id.letter11, R.id.letter12,R.id.letter13, R.id.letter14,R.id.letter15,
+            R.id.letter21, R.id.letter22,R.id.letter23, R.id.letter24,R.id.letter25};
 
     private int nbLettersWritten;
 
@@ -46,5 +46,9 @@ public class Word {
         nbLettersWritten--;
         letters.get(nbLettersWritten).eraseLetter();
 
+    }
+
+    public boolean isFull() {
+        return nbLettersWritten >= 5;
     }
 }

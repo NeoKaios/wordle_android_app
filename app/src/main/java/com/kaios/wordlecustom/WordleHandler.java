@@ -10,6 +10,8 @@ public class WordleHandler {
     private final Keyboard keyboard;
     private Word currentWord;
     private Hashtable<Integer, String > converter;
+    private Word[] words;
+    private int wordCnt;
 
     private WordleHandler() {
         keyboard = Keyboard.getInstance();
@@ -21,9 +23,12 @@ public class WordleHandler {
         }
         return(INSTANCE);
     }
-    public void startGame(Context context, View wordgrid, View keyboardView){
+    public void startGame(Context context, View wordGrid, View keyboardView){
         populateConverter(context);
-        currentWord = new Word(1, wordgrid);
+        //words = new Word[] { new Word(1, wordGrid), new Word(2, wordGrid), new Word(3, wordGrid), new Word(4, wordGrid), new Word(5, wordGrid), new Word(6, wordGrid)};
+        words = new Word[] { new Word(1, wordGrid), new Word(2, wordGrid)};
+        wordCnt= 0;
+        currentWord = words[wordCnt];
         keyboard.setup(keyboardView);
     }
 
@@ -66,6 +71,14 @@ public class WordleHandler {
     }
 
     public void enterPressed() {
-
+        if(!currentWord.isFull()){
+            return;
+        }
+        if(wordCnt>=1){
+            return;
+        }
+        //todo check if real word, else shake
+        wordCnt++;
+        currentWord = words[wordCnt];
     }
 }
